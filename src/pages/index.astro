@@ -1,11 +1,14 @@
 ---
+import { Image } from 'astro:assets'
+
+import preview from '../assets/preview.jpg'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="sonniy's Astro Starter">
 	<main class="main">
 		<h1>Тестовый текст</h1>
-		<img src="images/preview.jpg" width="800" height="600" alt="Обложка" />
+		<Image src={preview} alt="Обложка" loading="eager" />
 	</main>
 </Layout>
 
