@@ -6,7 +6,19 @@ import icon from 'astro-icon'
 export default defineConfig({
 	compressHTML: false,
 	integrations: [
-		icon(),
+		icon({
+			iconDir: 'src/assets/icons',
+			svgoOptions: {
+				plugins: [
+					{
+						name: 'removeAttrs',
+						params: {
+							attrs: '*:(stroke|fill):((?!^currentColor$).)*',
+						},
+					},
+				],
+			},
+		}),
 		compress({
 			CSS: false,
 		}),
