@@ -6,7 +6,7 @@ export default {
 	arrowParens: 'avoid',
 	trailingComma: 'all',
 	singleQuote: true,
-	printWidth: 80,
+	printWidth: 120,
 	plugins: ['prettier-plugin-astro'],
 	overrides: [
 		{

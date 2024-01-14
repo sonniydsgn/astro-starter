@@ -1,54 +1,20 @@
 ---
-import '../styles/global.css'
-import '../scripts/love.js'
+import '@styles/reset.css'
+import '@styles/vars.css'
+import '@styles/fonts.css'
+import '@styles/settings.css'
+import '@scripts/love.js'
 
-interface Props {
-	title: string
-	description?: string
-	image?: string
-}
+import Head from '@components/Head.astro'
 
-const {
-	title,
-	description = 'Описание сайта',
-	image = '/images/preview.jpg',
-} = Astro.props
+const { title, description, image } = Astro.props
 ---
 
-<!doctype html>
-<html lang="ru">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="icon" href="/favicon/favicon.ico" sizes="48x48" />
-		<link
-			rel="icon"
-			href="/favicon/favicon.svg"
-			sizes="any"
-			type="image/svg+xml"
-		/>
-		<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<meta property="og:image" content={image} />
-		<title>{title}</title>
-		<link
-			rel="preload"
-			href="/fonts/Inter-Regular.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin
-		/>
-		<link
-			rel="preload"
-			href="/fonts/Inter-SemiBold.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin
-		/>
-	</head>
-	<body>
-		<slot />
+<html lang="ru" class="page">
+	<Head title={title} description={description} image={image} />
+	<body class="page__body">
+		<div class="site-container">
+			<slot />
+		</div>
 	</body>
 </html>

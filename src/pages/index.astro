@@ -1,18 +1,23 @@
 ---
+import Preview from '@assets/preview.jpg'
+import Layout from '@layouts/Layout.astro'
 import { Image } from 'astro:assets'
-
-import Preview from '../assets/preview.jpg'
-import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="sonniy's Astro Starter">
 	<main class="main">
-		<h1>Тестовый текст</h1>
-		<Image src={Preview} alt="Обложка" loading="eager" />
+		<div class="container">
+			<h1>Тестовый текст</h1>
+			<Image src={Preview} alt="Обложка" loading="eager" />
+		</div>
 	</main>
 </Layout>
 
 <style>
+	.main {
+		display: flex;
+	}
+
 	h1 {
 		font-size: 32px;
 		color: darkgoldenrod;

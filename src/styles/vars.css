@@ -12,5 +12,6 @@
 	--font-primary: 16px;
 
 	/* colors */
-	--clr-light: #fff;
+	--clr-bg: #fff;
+	--clr-text: #2b2b2b;
 }
