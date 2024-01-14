@@ -2,8 +2,8 @@
 // https://just-validate.dev/docs/intro
 // https://github.com/RobinHerbots/Inputmask
 
-import JustValidate from 'just-validate'
 import Inputmask from 'inputmask'
+import JustValidate from 'just-validate'
 
 //? функция валидации
 const validateForms = (selector, rules, afterSend) => {
@@ -24,7 +24,7 @@ const validateForms = (selector, rules, afterSend) => {
 		const inputMask = new Inputmask('+7 (999) 999-99-99')
 		inputMask.mask(telSelector)
 
-		for (let item of rules) {
+		for (const item of rules) {
 			if (item.tel) {
 				item.rules.push({
 					rule: 'function',
@@ -32,7 +32,7 @@ const validateForms = (selector, rules, afterSend) => {
 						const phone = telSelector.inputmask.unmaskedvalue()
 						return phone.length === 10
 					},
-					errorMessage: item.telError
+					errorMessage: item.telError,
 				})
 			}
 		}
@@ -40,16 +40,16 @@ const validateForms = (selector, rules, afterSend) => {
 
 	const validation = new JustValidate(selector)
 
-	for (let item of rules) {
+	for (const item of rules) {
 		validation.addField(item.ruleSelector, item.rules)
 	}
 
 	validation.onSuccess(ev => {
-		let formData = new FormData(ev.target)
+		const formData = new FormData(ev.target)
 
-		let xhr = new XMLHttpRequest()
+		const xhr = new XMLHttpRequest()
 
-		xhr.onreadystatechange = function () {
+		xhr.onreadystatechange = () => {
 			if (xhr.readyState === 4) {
 				if (xhr.status === 200) {
 					if (afterSend) {
@@ -75,15 +75,14 @@ const rules1 = [
 			{
 				rule: 'maxLength',
 				value: 30,
-				errorMessage:
-					'Пожалуйста, укажите более короткий вариант имени, до 30 символов'
+				errorMessage: 'Пожалуйста, укажите более короткий вариант имени, до 30 символов',
 			},
 			{
 				rule: 'required',
 				value: true,
-				errorMessage: 'Пожалуйста, укажите имя'
-			}
-		]
+				errorMessage: 'Пожалуйста, укажите имя',
+			},
+		],
 	},
 	{
 		ruleSelector: '#tel',
@@ -93,10 +92,10 @@ const rules1 = [
 			{
 				rule: 'required',
 				value: true,
-				errorMessage: 'Пожалуйста, укажите номер телефона'
-			}
-		]
-	}
+				errorMessage: 'Пожалуйста, укажите номер телефона',
+			},
+		],
+	},
 ]
 
 //? функция при успешной отправки

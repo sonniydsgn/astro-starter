@@ -1,15 +1,15 @@
 // документация
 // https://micromodal.vercel.app
 
-import MicroModal from 'micromodal';
+import MicroModal from 'micromodal'
 
 MicroModal.init({
-  onShow: () => {
+	onShow: () => {
 		//? динамическая загрузка валидации
 		// (async () => {
 		//   await import('./validation.js')
 		// })();
 	},
-  disableScroll: true,
-  disableFocus: false
-});
+	disableScroll: true,
+	disableFocus: false,
+})
