@@ -37,7 +37,7 @@
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-astro": "^0.31.0",
 		"eslint-plugin-import": "^2.29.1",
-		"eslint-plugin-simple-import-sort": "^10.0.0",
+		"eslint-plugin-simple-import-sort": "^12.0.0",
 		"postcss": "^8.4.33",
 		"postcss-html": "^1.5.0",
 		"postcss-lightningcss": "^1.0.0",
