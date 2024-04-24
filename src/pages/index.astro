@@ -1,23 +1,20 @@
 ---
 import Preview from '@assets/preview.jpg'
+import Section from '@components/ui/Section.astro'
 import Layout from '@layouts/Layout.astro'
 import { Image } from 'astro:assets'
 ---
 
 <Layout title="sonniy's Astro Starter">
-	<main class="main">
+	<Section>
 		<div class="container">
 			<h1>Тестовый текст</h1>
 			<Image src={Preview} alt="Обложка" loading="eager" />
 		</div>
-	</main>
+	</Section>
 </Layout>
 
 <style>
-	.main {
-		display: flex;
-	}
-
 	h1 {
 		font-size: 32px;
 		color: darkgoldenrod;

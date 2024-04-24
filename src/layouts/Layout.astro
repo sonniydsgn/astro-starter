@@ -1,4 +1,6 @@
 ---
+import Footer from '@components/blocks/Footer.astro'
+import Header from '@components/blocks/Header.astro'
 import Head from '@components/Head.astro'
 
 const { title, description, image } = Astro.props
@@ -8,7 +10,11 @@ const { title, description, image } = Astro.props
 	<Head title={title} description={description} image={image} />
 	<body class="page__body">
 		<div class="site-container">
-			<slot />
+			<Header />
+			<main class="main">
+				<slot />
+			</main>
+			<Footer />
 		</div>
 	</body>
 </html>

@@ -4,7 +4,9 @@
 	"version": "1.0.0",
 	"browserslist": {
 		"production": [
-			"cover 99.5%"
+			"chrome >= 87",
+			"safari >= 14.1",
+			"firefox >= 98"
 		],
 		"development": [
 			"last 1 chrome version",
@@ -25,24 +27,23 @@
 		"test": "node-w3c-validator -f lint -evH -i dist/**/*.html"
 	},
 	"dependencies": {
-		"astro": "^4.3.7",
-		"astro-compress": "^2.2.10",
+		"astro": "^4.6.3",
+		"@playform/compress": "^0.0.3",
 		"astro-icon": "^1.1.0"
 	},
 	"devDependencies": {
-		"@typescript-eslint/parser": "^7.0.1",
-		"astro-eslint-parser": "^0.16.3",
-		"eslint": "^8.56.0",
+		"@typescript-eslint/parser": "^7.7.0",
+		"astro-eslint-parser": "^0.17.0",
+		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-astro": "^0.31.4",
+		"eslint-plugin-astro": "^0.34.0",
 		"eslint-plugin-import": "^2.29.1",
-		"eslint-plugin-simple-import-sort": "^12.0.0",
-		"postcss": "^8.4.35",
+		"eslint-plugin-simple-import-sort": "^12.1.0",
 		"postcss-html": "^1.6.0",
-		"postcss-lightningcss": "^1.0.0",
 		"prettier": "^3.2.5",
 		"prettier-plugin-astro": "^0.13.0",
-		"stylelint": "^16.2.1",
+		"sharp": "^0.33.3",
+		"stylelint": "^16.3.1",
 		"stylelint-config-html": "^1.1.0",
 		"stylelint-config-standard": "^36.0.0",
 		"stylelint-order": "^6.0.4",

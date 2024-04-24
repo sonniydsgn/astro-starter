@@ -14,9 +14,8 @@
 }
 
 .container {
-	margin: 0 auto;
-	padding: 0 var(--container-offset);
-	max-width: var(--container-width);
+	width: min(var(--content-width), 100% - calc(var(--container-offset) * 2));
+	margin-inline: auto;
 }
 
 .is-hidden {

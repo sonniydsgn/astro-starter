@@ -1,6 +1,5 @@
 html {
 	box-sizing: border-box;
-	text-size-adjust: none;
 }
 
 *,
@@ -51,6 +50,7 @@ meter {
 *:where(:not(html, iframe, canvas, img, svg, video, audio, svg *, symbol *)) {
 	all: unset;
 	display: revert;
+	box-sizing: border-box;
 }
 
 :where(pre) {

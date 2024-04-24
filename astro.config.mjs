@@ -1,15 +1,21 @@
+import compress from '@playform/compress'
 import { defineConfig } from 'astro/config'
-import compress from 'astro-compress'
 import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
 	compressHTML: false,
+	vite: {
+		css: {
+			transformer: 'lightningcss',
+		},
+	},
 	integrations: [
 		icon({
-			iconDir: 'src/assets/icons',
 			svgoOptions: {
+				multipass: true,
 				plugins: [
+					'preset-default',
 					{
 						name: 'removeAttrs',
 						params: {
@@ -20,7 +26,11 @@ export default defineConfig({
 			},
 		}),
 		compress({
-			CSS: false,
+			CSS: {
+				lightningcss: true,
+			},
+			Image: false,
+			HTML: false,
 		}),
 	],
 })
