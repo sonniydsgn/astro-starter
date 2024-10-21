@@ -5,20 +5,17 @@ module.exports = {
 		es2020: true,
 		browser: true,
 	},
-	extends: ['plugin:astro/recommended', 'prettier'],
-	plugins: ['simple-import-sort'],
+	parser: '@typescript-eslint/parser',
+	extends: ['plugin:astro/recommended', 'plugin:prettier/recommended'],
 	parserOptions: {
 		sourceType: 'module',
 	},
 	rules: {
-		'simple-import-sort/imports': 'warn',
-		'simple-import-sort/exports': 'warn',
 		'sort-imports': 'off',
 		'import/order': 'off',
 		'no-var': 'error',
-		'prefer-const': 'warn',
-		'func-names': ['warn', 'as-needed'],
-		'import/no-extraneous-dependencies': 'off',
+		'prefer-const': 'off',
+		'func-names': 'off',
 	},
 	overrides: [
 		{
@@ -28,9 +25,10 @@ module.exports = {
 				parser: '@typescript-eslint/parser',
 				extraFileExtensions: ['.astro'],
 			},
-			rules: {
-				'import/no-unresolved': 'off',
-			},
+		},
+		{
+			files: ['**/*.astro/*.js', '*.astro/*.js'],
+			parser: '@typescript-eslint/parser',
 		},
 	],
 }

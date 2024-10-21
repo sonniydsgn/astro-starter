@@ -1,31 +1,42 @@
 ---
-import '@styles/fonts.css'
-import '@styles/reset.css'
-import '@styles/vars.css'
-import '@styles/settings.css'
+import '@/styles/fonts.css'
+import '@/styles/reset.css'
+import '@/styles/vars.css'
+import '@/styles/base.css'
+import '@/styles/elements.css'
 
 interface Props {
 	title: string
+	url?: string
 	description?: string
 	image?: string
 }
 
-const { title, description, image = '/images/preview.jpg' } = Astro.props
+const { title, description, url = Astro.url, image = '/images/preview.jpg' } = Astro.props
 ---
 
 <head>
 	<meta charset="UTF-8" />
-	<meta name="description" content={description} />
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
+	<!-- фикс автоподсветки номеров в сафари -->
+	<meta name="format-detection" content="telephone=no" />
+	<!-- фавиконка -->
 	<link rel="icon" href="/favicon/favicon.ico" sizes="32x32" />
-	<link rel="icon" href="/favicon/favicon.svg" sizes="any" type="image/svg+xml" />
+	<link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
 	<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
-	<meta property="og:image" content={image} />
+	<link rel="manifest" href="/favicon/manifest.webmanifest" />
+	<!-- мета-данные -->
 	<title>{title}</title>
+	<meta property="og:site_name" content="название сайта" />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:url" content={url} />
+	<meta property="og:image" content={image} />
+	<meta name="description" content={description} />
+	<!-- шрифты -->
+	<link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
+	<link rel="preload" href="/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+	<!-- пасхалка -->
+	<script src="@/scripts/love.js"></script>
 </head>
-
-<script>
-	import '@scripts/love.js'
-</script>

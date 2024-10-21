@@ -1,8 +1,10 @@
 :root {
 	/* base */
-	--font-family: 'Inter', system-ui, sans-serif;
+	--ff-primary: 'Inter', system-ui, sans-serif;
 	--content-width: 1170px;
 	--container-offset: 15px;
+	--grid-columns: 12;
+	--grid-gap: 24px;
 
 	/* line-height */
 	--lh-primary: 1;
@@ -18,5 +20,7 @@
 	--br-primary: 12px;
 
 	/* transitions */
-	--tr-default: 0.2s ease;
+	@media (prefers-reduced-motion: no-preference) {
+		--tr-primary: 0.2s ease;
+	}
 }

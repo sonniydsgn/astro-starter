@@ -2,6 +2,10 @@
 dist/
 dev-dist/
 
+# configs
+.github/
+.astro/
+
 # dependencies
 node_modules/
 package-lock.json
@@ -14,7 +18,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 # environment variable
-.env.production
+.env
 
 # macOS-specific files
 .DS_Store

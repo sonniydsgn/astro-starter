@@ -5,12 +5,10 @@
 		"allowJs": true,
 		"baseUrl": ".",
 		"noEmit": true,
+		"typeRoots": ["./types", "./node_modules/@types", "./node_modules/@yandex/ymaps3-types"],
 		"paths": {
-			"@components/*": ["src/components/*"],
-			"@layouts/*": ["src/layouts/*"],
-			"@assets/*": ["src/assets/*"],
-			"@styles/*": ["src/styles/*"],
-			"@scripts/*": ["src/scripts/*"],
+			"@/*": ["src/*"]
 		}
-	}
+	},
+	"exclude": ["node_modules", "dist"]
 }

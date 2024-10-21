@@ -1,0 +1,33 @@
+/* иконки */
+.icon {
+	--size: 24px;
+
+	width: var(--size);
+	height: var(--size);
+	fill: currentcolor;
+	transition:
+		color var(--tr-primary) ease,
+		opacity var(--tr-primary) ease,
+		transform var(--tr-primary) ease;
+	pointer-events: none;
+
+	&.icon--16 {
+		--size: 16px;
+	}
+}
+
+/* заголовки */
+h1,
+h2,
+h3 {
+	color: var(--clr-text);
+	font-weight: 700;
+	text-wrap: balance;
+}
+
+h1 {
+	color: darkgoldenrod;
+	font-size: 56px;
+	line-height: 0.95;
+	letter-spacing: -0.05em;
+}

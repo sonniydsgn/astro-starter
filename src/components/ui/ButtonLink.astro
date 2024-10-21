@@ -1,18 +1,18 @@
 ---
-import type { CallToAction } from 'src/types.d.ts'
-type Props = CallToAction
+import type { ButtonLink } from '@/types'
+type Props = ButtonLink
 
-const { tier, text, link = false, class: className, type = 'button', ...rest } = Astro.props
+const { link, class: className, type = 'button', ...rest } = Astro.props
 ---
 
 {
 	link ? (
 		<a href={link} class:list={['link', className]} {...rest}>
-			{text && <span>{text}</span>}
+			<slot />
 		</a>
 	) : (
-		<button class:list={['btn-reset', 'btn', { ['btn--' + tier]: tier }, className]} {type} {...rest}>
-			{text && <span>{text}</span>}
+		<button class:list={['btn-reset', className]} {type} {...rest}>
+			<slot />
 		</button>
 	)
 }
@@ -21,9 +21,9 @@ const { tier, text, link = false, class: className, type = 'button', ...rest } =
 	.btn-reset {
 		border: none;
 		padding: 0;
-		font-family: var(--font-family);
 		background-color: transparent;
 		cursor: pointer;
+		font-family: var(--ff-primary);
 	}
 
 	.btn {
@@ -40,20 +40,25 @@ const { tier, text, link = false, class: className, type = 'button', ...rest } =
 			transform var(--tr-primary) ease; */
 	}
 
-	/* .btn span {
-		transition:
-			color var(--tr-primary) ease,
-			opacity var(--tr-primary) ease;
-	} */
-
 	.btn:disabled {
+		opacity: 0.6;
 		cursor: not-allowed;
 	}
 
-	.btn:disabled > * {
-		opacity: 0.4;
-	}
+	.link {
+		--default-color: var(--clr-text);
+		--hover-color: var(--clr-text);
 
-	/* .link {
-	} */
+		transition: color var(--tr-primary);
+		color: var(--default-color);
+		font-weight: 600;
+		font-size: var(--font-primary);
+		line-height: var(--lh-primary);
+
+		@media (hover) {
+			&:hover {
+				color: var(--hover-color);
+			}
+		}
+	}
 </style>

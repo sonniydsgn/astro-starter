@@ -1,16 +1,20 @@
-import compress from '@playform/compress'
+// если сайт многостраничный, то для лучшего seo можно поставить зависимость @astrojs/sitemap и раскомментировать
+// import sitemap from '@astrojs/sitemap'
+
 import { defineConfig } from 'astro/config'
 import icon from 'astro-icon'
 
-// https://astro.build/config
+// гайд по конфигу — https://astro.build/config
 export default defineConfig({
-	compressHTML: false,
+	compressHTML: true,
+	// site: 'https://nova-ug.ru',
 	vite: {
 		css: {
 			transformer: 'lightningcss',
 		},
 	},
 	integrations: [
+		// sitemap(),
 		icon({
 			svgoOptions: {
 				multipass: true,
@@ -24,13 +28,6 @@ export default defineConfig({
 					},
 				],
 			},
-		}),
-		compress({
-			CSS: {
-				lightningcss: true,
-			},
-			Image: false,
-			HTML: false,
 		}),
 	],
 })

@@ -1,9 +1,6 @@
 import type { HTMLAttributes } from 'astro/types'
 
-export interface CallToAction extends HTMLAttributes<'button'> {
-	tier?: 'primary' | 'link'
-	text?: string
-	class?: string
+export interface ButtonLink extends HTMLAttributes<'button'>, HTMLAttributes<'a'> {
 	link?: string
-	type?: 'button' | 'submit' | 'reset'
+	class?: string
 }
