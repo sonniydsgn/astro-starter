@@ -28,7 +28,7 @@
 		"test": "node-w3c-validator -f lint -evH -i dist/**/*.html"
 	},
 	"dependencies": {
-		"astro": "^4.16.6",
+		"astro": "^5.0.4",
 		"astro-icon": "^1.1.1",
 		"typescript": "^5.6.3"
 	},
